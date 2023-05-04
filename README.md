@@ -25,6 +25,17 @@ git remote add origin git@github.com:coding-to-music/gtfs-to-chart-stringlines.g
 git push -u origin main
 ```
 
+## Typical usage
+
+```
+cp config-sample.json config.json
+
+yarn install
+yarn start
+```
+
+## Original README.md
+
 <p align="center">
   ➡️
   <a href="#installation">Installation</a> |

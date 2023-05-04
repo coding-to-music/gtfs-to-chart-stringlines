@@ -6,3 +6,5 @@ views/custom
 
 .git
 .DS_Store
+
+.env
