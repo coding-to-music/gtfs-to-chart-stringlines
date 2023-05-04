@@ -149,9 +149,66 @@ https://transitfeeds.com/p/mbta/64/latest
 
 https://transitfeeds.com/p/mbta/64/latest/download
 
+## create config-mbta.json
+
+```
+{
+  "agencies": [
+    {
+      "agency_key": "mbta",
+      "url": "https://transitfeeds.com/p/mbta/64/latest/download/gtfs.zip"
+    }
+  ],
+  "sqlitePath": "/tmp/gtfs"
+}
+```
+
+## Running
+
 ```
 gtfs-to-chart --configPath config-mbta.json
 ```
+
+Output
+
+```
+gtfs-to-chart --configPath config-mbta.json
+
+Starting GTFS import for 1 file using SQLite database at /tmp/gtfs
+Downloading GTFS from https://transitfeeds.com/p/mbta/64/latest/download/gtfs.zip
+Error: Couldn’t download files
+file:///home/tmc/.nvm/versions/node/v16.19.1/lib/node_modules/gtfs-to-chart/node_modules/gtfs/lib/import.js:41
+    throw new Error('Couldn’t download files');
+          ^
+
+[  Error: Couldn’t download files
+  
+  - import.js:41 downloadFiles
+    [lib]/[gtfs-to-chart]/[gtfs]/lib/import.js:41:11
+  
+  - task_queues:96 processTicksAndRejections
+    node:internal/process/task_queues:96:5
+  
+  - import.js:597 
+    [lib]/[gtfs-to-chart]/[gtfs]/lib/import.js:597:9
+  
+  - index.js:7 async promiseMapSeries
+    [lib]/[gtfs-to-chart]/[promise-map-series]/index.js:7:18
+  
+  - import.js:577 async importGtfs
+    [lib]/[gtfs-to-chart]/[gtfs]/lib/import.js:577:5
+  
+  - gtfs-to-chart.js:43 
+    [lib]/[gtfs-to-chart]/lib/gtfs-to-chart.js:43:7
+  
+  - async Promise.all
+  
+  - gtfs-to-chart.js:66 
+    [lib]/[gtfs-to-chart]/bin/gtfs-to-chart.js:66:5
+  
+]
+```
+
 
 ## Original README.md
 
