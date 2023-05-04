@@ -143,6 +143,16 @@ route_id,category,subcategory,running_way
 1,2,201,1
 ```
 
+## Boston MBTA data
+
+https://transitfeeds.com/p/mbta/64/latest
+
+https://transitfeeds.com/p/mbta/64/latest/download
+
+```
+gtfs-to-chart --configPath config-mbta.json
+```
+
 ## Original README.md
 
 <p align="center">
