@@ -25,6 +25,7 @@
   "scripts": {
     "start": "node ./app",
     "lint": "eslint app/**/*.js lib/**/*.js public/**/*.js --fix",
+    "deploy": "git add . && git commit -m Build && git push",
     "prepare": "husky install"
   },
   "dependencies": {

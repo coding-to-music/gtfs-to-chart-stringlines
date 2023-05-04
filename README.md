@@ -1,3 +1,30 @@
+# gtfs-to-chart-stringlines
+
+# 🚀 Generate stringline charts from GTFS transit data 🚀
+
+https://github.com/coding-to-music/gtfs-to-chart-stringlines
+
+From / By https://github.com/BlinkTagInc/gtfs-to-chart
+
+
+## Environment variables:
+
+```java
+
+```
+
+## GitHub
+
+```java
+git init
+git add .
+git remote remove origin
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:coding-to-music/gtfs-to-chart-stringlines.git
+git push -u origin main
+```
+
 <p align="center">
   ➡️
   <a href="#installation">Installation</a> |
