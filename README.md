@@ -28,10 +28,119 @@ git push -u origin main
 ## Typical usage
 
 ```
-cp config-sample.json config.json
-
 yarn install
 yarn start
+```
+
+## create config.json using the config-sample.json 
+
+```
+cp config-sample.json config.json
+```
+
+## Install gtfs-to-chart globally
+
+```
+npm install gtfs-to-chart -g
+```
+
+## contents of config-sample.json
+
+```
+{
+  "agencies": [
+    {
+      "agency_key": "bart",
+      "url": "http://www.bart.gov/dev/schedules/google_transit.zip"
+    }
+  ],
+  "sqlitePath": "/tmp/gtfs"
+}
+```
+
+## Running
+
+```
+gtfs-to-chart --configPath config.json
+```
+
+Output
+
+```
+Starting GTFS import for 1 file using SQLite database at /tmp/gtfs
+Downloading GTFS from http://www.bart.gov/dev/schedules/google_transit.zip
+Download successful
+Importing GTFS from /tmp/tmp-141173-eank3fXmavG0/gtfs.zip
+Importing - agency.txt - 1 lines imported
+Importing - areas.txt - No file found
+Importing - attributions.txt - No file found
+Importing - calendar_dates.txt - 32 lines imported
+Importing - calendar.txt - 13 lines imported
+Importing - fare_attributes.txt - 2500 lines imported
+Importing - fare_leg_rules.txt - No file found
+Importing - fare_products.txt - No file found
+Importing - fare_rules.txt - 2500 lines imported
+Importing - fare_transfer_rules.txt - No file found
+Importing - feed_info.txt - 1 lines imported
+Importing - frequencies.txt - No file found
+Importing - levels.txt - No file found
+Importing - pathways.txt - No file found
+Importing - routes.txt - 14 lines imported
+Importing - shapes.txt - 38044 lines imported
+Importing - stop_areas.txt - No file found
+Importing - stop_times.txt - 61853 lines imported
+Importing - stops.txt - 186 lines imported
+Importing - transfers.txt - 41 lines imported
+Importing - translations.txt - No file found
+Importing - trips.txt - 4225 lines imported
+Importing - calendar_attributes.txt - 11 lines imported
+Importing - directions.txt - 14 lines imported
+Importing - route_attributes.txt
+Warning: Check route_attributes.txt for invalid data between lines 0 and 14.
+
+file:///home/tmc/.nvm/versions/node/v16.19.1/lib/node_modules/gtfs-to-chart/node_modules/gtfs/lib/import.js:473
+    throw error;
+    ^
+[  SqliteError: route_attributes.route_id
+  
+  - import.js:466 importLines
+    [lib]/[gtfs-to-chart]/[gtfs]/lib/import.js:466:7
+  
+  - import.js:547 Parser.<anonymous>
+    [lib]/[gtfs-to-chart]/[gtfs]/lib/import.js:547:11
+  
+  - node:events:513 Parser.emit
+    node:events:513:28
+  
+  - readable:1358 endReadableNT
+    node:internal/streams/readable:1358:12
+  
+  - task_queues:83 processTicksAndRejections
+    node:internal/process/task_queues:83:21
+  
+] {
+  code: 'SQLITE_CONSTRAINT_PRIMARYKEY'
+}
+```
+
+## Contents of route_attributes.txt
+
+```
+route_id,category,subcategory,running_way
+1,2,201,1
+2,2,201,1
+3,2,201,1
+4,2,201,1
+5,2,201,1
+6,2,201,1
+7,2,201,1
+8,2,201,1
+11,2,201,1
+12,2,201,1
+19,3,301,1
+20,3,301,1
+2,2,201,1
+1,2,201,1
 ```
 
 ## Original README.md
