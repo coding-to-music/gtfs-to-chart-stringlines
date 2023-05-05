@@ -1,5 +1,5 @@
 node_modules
-charts
+# charts
 config*
 !config-sample.json
 views/custom
