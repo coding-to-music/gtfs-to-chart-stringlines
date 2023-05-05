@@ -27,14 +27,14 @@ git push -u origin main
 
 ## Typical usage
 
-```
+```shell
 yarn install
 yarn start
 ```
 
 ## create config-mbta.json
 
-```
+```json
 {
   "agencies": [
     {
@@ -48,13 +48,13 @@ yarn start
 
 ## create config.json using the config-sample.json 
 
-```
+```shell
 cp config-sample.json config.json
 ```
 
 ## Install gtfs-to-chart globally
 
-```
+```shell
 npm install gtfs-to-chart -g
 
 gtfs-to-chart --version
@@ -64,7 +64,7 @@ gtfs-to-chart --version
 
 ## contents of config-sample.json
 
-```
+```json
 {
   "agencies": [
     {
@@ -78,13 +78,13 @@ gtfs-to-chart --version
 
 ## Running
 
-```
+```shell
 gtfs-to-chart --configPath config.json
 ```
 
 Output
 
-```
+```shell
 Starting GTFS import for 1 file using SQLite database at /tmp/gtfs
 Downloading GTFS from http://www.bart.gov/dev/schedules/google_transit.zip
 Download successful
@@ -143,7 +143,7 @@ file:///home/tmc/.nvm/versions/node/v16.19.1/lib/node_modules/gtfs-to-chart/node
 
 ## Contents of route_attributes.txt
 
-```
+```shell
 route_id,category,subcategory,running_way
 1,2,201,1
 2,2,201,1
@@ -169,12 +169,12 @@ https://transitfeeds.com/p/mbta/64/latest/download
 
 ## create config-mbta.json
 
-```
+```json
 {
   "agencies": [
     {
       "agency_key": "mbta",
-      "url": "https://transitfeeds.com/p/mbta/64/latest/download/gtfs.zip"
+      "url": "https://cdn.mbta.com/MBTA_GTFS.zip"
     }
   ],
   "sqlitePath": "/tmp/gtfs"
@@ -183,48 +183,115 @@ https://transitfeeds.com/p/mbta/64/latest/download
 
 ## Running
 
-```
+```shell
 gtfs-to-chart --configPath config-mbta.json
 ```
 
 Output
 
-```
-gtfs-to-chart --configPath config-mbta.json
-
+```shell
 Starting GTFS import for 1 file using SQLite database at /tmp/gtfs
-Downloading GTFS from https://transitfeeds.com/p/mbta/64/latest/download/gtfs.zip
-Error: Couldn’t download files
-file:///home/tmc/.nvm/versions/node/v16.19.1/lib/node_modules/gtfs-to-chart/node_modules/gtfs/lib/import.js:41
-    throw new Error('Couldn’t download files');
-          ^
+Downloading GTFS from https://cdn.mbta.com/MBTA_GTFS.zip
+Download successful
+Importing GTFS from /tmp/tmp-182845-5Sj01ZrXnN4T/gtfs.zip
+Importing - agency.txt - 1 lines imported
+Importing - areas.txt - 32 lines imported
+Importing - attributions.txt - No file found
+Importing - calendar_dates.txt - 54 lines imported
+Importing - calendar.txt - 90 lines imported
+Importing - fare_attributes.txt - No file found
+Importing - fare_leg_rules.txt - 456 lines imported
+Importing - fare_products.txt - 87 lines imported
+Importing - fare_rules.txt - No file found
+Importing - fare_transfer_rules.txt - 37 lines imported
+Importing - feed_info.txt - 1 lines imported
+Importing - frequencies.txt - No file found
+Importing - levels.txt - 74 lines imported
+Importing - pathways.txt - 7999 lines imported
+Importing - routes.txt - 219 lines imported
+Importing - shapes.txt - 258537 lines imported
+Importing - stop_areas.txt - 758 lines imported
+Importing - stop_times.txt - 1605036 lines imported
+Importing - stops.txt - 9743 lines imported
+Importing - transfers.txt - 5312 lines imported
+Importing - translations.txt - No file found
+Importing - trips.txt - 65139 lines imported
+Importing - calendar_attributes.txt - 90 lines imported
+Importing - directions.txt - 378 lines imported
+Completed GTFS import for 1 agency
+mbta: Generating charts [===================================----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------] 35/219
+Warning: No trips found for route CR-Foxboro on May 5, 2023
+mbta: Generating charts [============================================================================================================================-----------------------------------------------------------------------------------------------] 124/219
+Warning: No trips found for route Shuttle-Generic-CommuterRail-South on May 5, 2023
 
-[  Error: Couldn’t download files
-  
-  - import.js:41 downloadFiles
-    [lib]/[gtfs-to-chart]/[gtfs]/lib/import.js:41:11
-  
-  - task_queues:96 processTicksAndRejections
-    node:internal/process/task_queues:96:5
-  
-  - import.js:597 
-    [lib]/[gtfs-to-chart]/[gtfs]/lib/import.js:597:9
-  
-  - index.js:7 async promiseMapSeries
-    [lib]/[gtfs-to-chart]/[promise-map-series]/index.js:7:18
-  
-  - import.js:577 async importGtfs
-    [lib]/[gtfs-to-chart]/[gtfs]/lib/import.js:577:5
-  
-  - gtfs-to-chart.js:43 
-    [lib]/[gtfs-to-chart]/lib/gtfs-to-chart.js:43:7
-  
-  - async Promise.all
-  
-  - gtfs-to-chart.js:66 
-    [lib]/[gtfs-to-chart]/bin/gtfs-to-chart.js:66:5
-  
-]
+Warning: No trips found for route Shuttle-Generic-CommuterRail-North on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-CommuterRail on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Blue on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic on May 5, 2023
+mbta: Generating charts [===============================================================================================================================================================================--------------------------------------------] 175/219
+Warning: No trips found for route 195 on May 5, 2023
+mbta: Generating charts [============================================================================================================================================================================================-------------------------------] 188/219
+Warning: No trips found for route Shuttle-JFKPark on May 5, 2023
+mbta: Generating charts [==============================================================================================================================================================================================-----------------------------] 190/219
+Warning: No trips found for route Shuttle-JFKKendall on May 5, 2023
+mbta: Generating charts [=================================================================================================================================================================================================--------------------------] 193/219
+Warning: No trips found for route Shuttle-GovernmentCenterWonderland on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Worcester on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Red-Trunk on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Red-Braintree on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Red-Ashmont on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Red on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Providence on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Orange on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Newburyport on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Needham on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Middleborough on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Mattapan on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Lowell on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Kingston on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Haverhill on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Green-Trunk on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Green-E on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Green-D on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Green-C on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Greenbush on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Green-B on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Green on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Franklin on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Fitchburg on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Fairmount on May 5, 2023
+
+Warning: No trips found for route Shuttle-Generic-Elevator on May 5, 2023
+mbta: Generating charts [===========================================================================================================================================================================================================================] 219/219
+
+mbta: charts created at /home/tmc/ap/vol6/gtfs-to-chart-stringlines/charts/mbta
 ```
 
 
