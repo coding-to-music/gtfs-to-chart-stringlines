@@ -42,6 +42,10 @@ cp config-sample.json config.json
 
 ```
 npm install gtfs-to-chart -g
+
+gtfs-to-chart --version
+
+2.0.6
 ```
 
 ## contents of config-sample.json
