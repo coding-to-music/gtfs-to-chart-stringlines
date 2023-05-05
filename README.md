@@ -32,6 +32,20 @@ yarn install
 yarn start
 ```
 
+## create config-mbta.json
+
+```
+{
+  "agencies": [
+    {
+      "agency_key": "mbta",
+      "url": "https://cdn.mbta.com/MBTA_GTFS.zip"
+    }
+  ],
+  "sqlitePath": "/tmp/gtfs"
+}
+```
+
 ## create config.json using the config-sample.json 
 
 ```
