@@ -8,3 +8,4 @@ views/custom
 .DS_Store
 
 .env
+.vercel
